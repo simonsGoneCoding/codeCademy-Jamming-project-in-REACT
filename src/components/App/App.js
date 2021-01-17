@@ -13,6 +13,27 @@ class App extends Component {
         { name: "baba", artist: "krasnale", album: "mlotek", id: 2 },
         { name: "cwircwir", artist: "ptaszki", album: "ziarenka", id: 3 },
       ],
+      playlistName: "List1",
+      playlistTracks: [
+        {
+          name: "playlistName1",
+          artist: "playlistArtist1",
+          album: "playlistAlbum1",
+          id: 4,
+        },
+        {
+          name: "playlistName2",
+          artist: "playlistArtist2",
+          album: "playlistAlbum2",
+          id: 5,
+        },
+        {
+          name: "playlistName3",
+          artist: "playlistArtist3",
+          album: "playlistAlbum3",
+          id: 6,
+        },
+      ],
     };
   }
   render() {
@@ -25,7 +46,10 @@ class App extends Component {
           <SearchBar />
           <div className="App-playlist">
             <SearchResults searchResults={this.state.searchResults} />
-            <PlayList />
+            <PlayList
+              name={this.state.playlistName}
+              tracks={this.state.playlistTracks}
+            />
           </div>
         </div>
       </div>
