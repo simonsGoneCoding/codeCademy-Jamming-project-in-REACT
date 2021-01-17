@@ -40,11 +40,12 @@ class App extends Component {
   }
 
   addTrack(track) {
-    const tracks = this.state.playlistTracks;
+    const tracks = this.state.playlistTracks.slice(0);
     if (tracks.find((savedTrack) => savedTrack.id === track.id)) {
       return;
     }
-    this.setState({ playlistTracks: tracks.push(track) });
+    tracks.push(track);
+    this.setState({ playlistTracks: tracks });
   }
 
   render() {
