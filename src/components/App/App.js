@@ -37,6 +37,7 @@ class App extends Component {
     };
 
     this.addTrack = this.addTrack.bind(this);
+    this.removeTrack = this.removeTrack.bind(this);
   }
 
   addTrack(track) {
@@ -45,6 +46,13 @@ class App extends Component {
       return;
     }
     tracks.push(track);
+    this.setState({ playlistTracks: tracks });
+  }
+
+  removeTrack(track) {
+    const tracks = this.state.playlistTracks.slice(0);
+    const index = tracks.findIndex((el) => el.id === track.id);
+    tracks.splice(index, 1);
     this.setState({ playlistTracks: tracks });
   }
 
@@ -64,6 +72,7 @@ class App extends Component {
             <PlayList
               name={this.state.playlistName}
               tracks={this.state.playlistTracks}
+              onRemove={this.removeTrack}
             />
           </div>
         </div>
