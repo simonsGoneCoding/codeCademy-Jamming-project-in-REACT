@@ -1,5 +1,6 @@
+import { clientID } from "./clientID";
+
 let accessToken;
-const clientID = "74d42106c0504306adb1268b50362ec8";
 const redirectUri = "http://localhost:3000/";
 
 const Spotify = {
