@@ -9,32 +9,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchResults: [
-        { name: "bubu", artist: "smerfy", album: "czemu nie", id: 1 },
-        { name: "baba", artist: "krasnale", album: "mlotek", id: 2 },
-        { name: "cwircwir", artist: "ptaszki", album: "ziarenka", id: 3 },
-      ],
-      playlistName: "List1",
-      playlistTracks: [
-        {
-          name: "playlistName1",
-          artist: "playlistArtist1",
-          album: "playlistAlbum1",
-          id: 4,
-        },
-        {
-          name: "playlistName2",
-          artist: "playlistArtist2",
-          album: "playlistAlbum2",
-          id: 5,
-        },
-        {
-          name: "playlistName3",
-          artist: "playlistArtist3",
-          album: "playlistAlbum3",
-          id: 6,
-        },
-      ],
+      searchResults: [],
+      playlistName: "My Playlist",
+      playlistTracks: [],
     };
 
     this.addTrack = this.addTrack.bind(this);
